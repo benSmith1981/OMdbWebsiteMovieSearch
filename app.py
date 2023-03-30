@@ -22,10 +22,15 @@ def index():
         #this is an api key that allows us to search OMBD
         api_key = "f0674f3f" 
 
+        #THis is the URL that goes to OMDB and uses parameters to search
+        #the database such as s for movie title
+        #Parameters are joined together by &
         url = f"http://www.omdbapi.com/?s={search_query}&apikey={api_key}" 
 
+        # This makes a request to the url
         response = requests.get(url) 
 
+        #This deserializes the response to JSON
         data = response.json() 
 
         print(data) #look in the terminal at the data 
